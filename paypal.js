@@ -50,6 +50,8 @@ if(Meteor.isServer){
     var paypal_sdk = Npm.require('paypal-rest-sdk');
     var Fiber = Npm.require('fibers');
     var Future = Npm.require('fibers/future');
+
+    paypal_sdk.configure(Meteor.Paypal.account_options);
     Meteor.methods({
       paypal_submit: function(transaction_type, cardData, paymentData){
         paypal_sdk.configure(Meteor.Paypal.account_options);
@@ -83,6 +85,7 @@ if(Meteor.isServer){
     Meteor.Paypal.execute = function execute(payment_id, payer_id, callback) {
       paypal_sdk.payment.execute(payment_id, {payer_id: payer_id}, Meteor.Paypal.account_options, callback);
     };
+
+    Meteor.Paypal.sdk = paypal_sdk;
   });
 }
-
