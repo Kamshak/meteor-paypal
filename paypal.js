@@ -41,7 +41,7 @@ Meteor.Paypal = {
   },
   //parsePaymentData splits up the card data and gets it into a paypal friendly format.
   parsePaymentData: function(data){
-    return {amount: {total: data.total, currency: data.currency}};
+    return data;
   }
 };
 
