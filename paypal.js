@@ -70,6 +70,7 @@ if(Meteor.isServer){
         this.unblock();
         paypal_sdk.payment.create(payment_json, Meteor.bindEnvironment(function(err, payment){
           if (err){
+            console.log(err);
             fut.return({saved: false, error: err});
           } else {
             fut.return({saved: true, payment: payment});

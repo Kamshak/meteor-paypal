@@ -1,6 +1,6 @@
 Package.describe({
 	summary: "A paypal package that helps make restful API calls to Paypal",
-	version: "1.0.2",
+	version: "1.0.3",
 	name: "kamshak:paypal",
 	git: "https://github.com/Kamshak/meteor-paypal.git"
 });
